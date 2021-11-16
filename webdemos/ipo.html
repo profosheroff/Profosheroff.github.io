@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Input, Processing, and Output</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+ 
+<h1>JavaScript IPO</h1>
+ <p>Right click and view source to see code. </p>
+<p>Input a number:</p>
+ 
+<input id="in">
+ 
+<button type="button" onclick="myFunction()">Submit</button>
+ 
+<p id="out"></p>
+ 
+<script>
+function myFunction() {
+    var inVar, outVar;
+ 
+    // Input
+    inVar = document.getElementById("in").value;
+   
+    // Processing
+    outVar = parseInt(inVar) + 2;
+ 
+    // Output
+    document.getElementById("out").innerHTML = outVar;
+}
+</script>
+ 
+</body>
+</html>
