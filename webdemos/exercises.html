@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="UTF-8">
+        <title>Demo Exercises</title>
+    </head>
+<body>
+
+   <h2> ------------ Exercise 1 -------------- </h2>
+    <h3>Temp Converter with Preset Variables</h3>
+    <h4>Problem Statement</h4>
+    <p>Write a program that converts Fahrenheit temperatures to Celsius.</p>
+    <h4>Plans and pseudocode</h4>
+    <p>Initialize variable for Fahrenheit temp<br>
+    Declare variable for Celsius temp<br>
+    Celsius temp = (Fahrenheit temp - 32) * .5556<br>
+    Output Celsius temp</p>
+    <h4>Solution</h4>
+    <code>var fahrTemp = 90; </code><br>   
+    <code>var celTemp;</code><br>
+    <code>celTemp = (fahrTemp - 32) * .5556;</code><br>
+    <code>document.getElementById("cTemp").innerHTML = "Celsius = " + celTemp;</code><br>
+    <h4>Demonstration</h4>
+    Fahrenheit Temperature: 90
+    <p id="celTemp"></p>
+    <script> 
+        var fahrTemp = 90;    
+        var celTemp;
+        celTemp = (fahrTemp - 32) * .5556;
+        document.getElementById("celTemp").innerHTML = "Celsius = " + celTemp;
+    </script>
+   
+    <h2> ------------ Exercise 2 -------------- </h2>
+    <h3>Temp Converter with User Input</h3>
+    <h4>Problem Statement</h4>
+    <p>Write a program that converts Fahrenheit temperatures to Celsius.</p>
+    <h4>Plans and pseudocode</h4>
+    <p>Declare variable and assign user input for Fahrenheit temp<br>
+    Declare variable for Celsius temp and assign (Fahrenheit temp - 32) * .5556;<br>
+    Output Celsius temp</p>
+    <h4>Solution</h4>
+    <code>var fahrTemp = parseInt(document.getElementById('fTemp').value); </code><br>   
+    <code>var celTemp = (fahrTemp - 32) * .5556;</code><br>
+    <code>document.getElementById("cTemp").innerHTML = "Celsius = " + celTemp;</code><br>
+    <h4>Demonstration</h4>
+    Fahrenheit Temperature: <input type="number" id="fTemp" value=50><br>
+    <button onclick="tempConver()">Convert Temp</button>
+    <p id="cTemp"></p>
+    <script> 
+        function tempConver() {
+            var fahrTemp = document.getElementById('fTemp').value;    
+            var celTemp = (fahrTemp - 32) * .5556;
+            document.getElementById("cTemp").innerHTML = "Celsius = " + celTemp;
+        }
+    </script>
+     
+    <h2> ------------ Exercise 3 -------------- </h2>
+    <h3>Calculate Total Meal Price with Fixed Tax and Tip</h3>
+    <p>6% tip and 15%</p>
+    Meal Price: <input type="number" id="mealPriceInput1" value=50><br>
+    <button onclick="mealPriceCalc1()">Calculate Meal Price</button>
+    <p id="cost1"></p>
+    
+    <script> 
+        function mealPriceCalc1() {
+            var mealPrice =  parseFloat(document.getElementById('mealPriceInput1').value);
+            var totalCost = mealPrice + (mealPrice * .06) + (mealPrice * .15);
+            document.getElementById("cost1").innerHTML = "Total Cost = " + totalCost;
+        }
+    </script>
+
+    <h2> ------------ Exercise 4 -------------- </h2>
+    <h3>Calculate Total Meal Price with Variable Tax and Tip</h3>
+    Meal Price: <input type="number" id="mealPriceInput2" value=50><br>
+    Tax Rate: <input type="number" id="taxRateInput" value=6><br>
+    Tip Rate: <input type="number" id="tipRateInput" value=15><br>
+    <button onclick="mealPriceCalc2()">Calculate Meal Price</button>
+    <p id="cost2"></p>
+    
+    <script> 
+        function mealPriceCalc2() {
+            var mealPrice = parseFloat(document.getElementById('mealPriceInput2').value);
+            var taxRate = parseFloat(document.getElementById('taxRateInput').value);
+            var tipRate = parseFloat(document.getElementById('tipRateInput').value);
+            var totalCost = mealPrice + (mealPrice * (taxRate / 100.0)) + (mealPrice * (tipRate / 100.0));
+            document.getElementById("cost2").innerHTML = "Total Cost = " + totalCost;
+        }
+    </script>
+
+</body>
+</html>
