@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Input Output Button</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+ <h1>Input Output Function</h1>
+Text input: <input type="text" id="text_input" value="John">
+Number input: <input type="number" id="number_input" value="123">
+<button onclick="doFunction()">Submit</button>
+   
+<hr>
+<p id="text_result"></p>
+<p id="number_result"></p>
+ 
+<script>
+function doFunction() {
+  // input
+  var name = document.getElementById('text_input').value;
+  var num = document.getElementById('number_input').value;
+  // output
+  document.getElementById("text_result").innerHTML = "Hello " + name;
+  document.getElementById("number_result").innerHTML = num + num;
+}
+</script>
+ 
+</body>
+</html>
