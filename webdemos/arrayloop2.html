@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang=en>
+
+<head>
+    <meta charset=utf-8>
+    <title>Arrays and Loops 2</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <h1>Arrays and Loops 2</h1>
+    <p>Right click and view source to see code. </p>
+    <p>Input test scores:</p>
+
+    <button type="button" onclick="calcAverage()">Get Average</button>
+
+    <p id="out"></p>
+
+    <script>
+        function calcAverage() {
+
+            var total = 0;
+            var testNum = 1;
+            var numTests = 5;
+            var testString;
+            while (testNum <= numTests) {
+                testString = prompt("Enter Test Score");
+
+                total = total + parseInt(testString);
+                testNum++;
+            }
+
+            var testAverage = total / numTests;
+
+            document.getElementById("out").innerHTML = testAverage;
+        }
+    </script>
+
+</body>
+
+</html>
