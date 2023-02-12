@@ -1,42 +1,85 @@
 <!doctype html>
 <html lang=en>
+
 <head>
 <meta charset=utf-8>
 <title>Full Stack Demo</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="../webServerLink.js" ></script>
 </head>
 <body>
  <h1>Full Stack Demo</h1>
+
+ <hr>
+ <h2>In-HTML Processing:</h2>
 Text input: <input type="text" id="text_input" value="John">
 Number input: <input type="number" id="number_input" value="123">
 <button onclick="doFunction()">Submit</button>
    
-<hr>
 <p id="text_result"></p>
 <p id="number_result"></p>
 
 <hr>
-  
-Text input: <input type="text" id="text_input" value="">
-<button onclick="writefunction()">Write</button>
-  <button onclick="readfunction()">Read</button>  
- 
+<h2>Linking to external Javascript/TypeScript File:</h2>>
+Text input: <input type="text" id="new_text_input" value="Sally">
+<button onclick="externalFunction()">Submit Another</button>
+<p id="new_result"></p>
+
+<hr>
+<h2>Accessing External Web Server - displaying response:</h2>
+
+<button onclick="accessWebserver()">Read</button> 
+
+<p id="web_server_result"></p>
+
+<hr>
+<h2>Linking to database server through Web Server:</h2>
+<h2>Database Write</h2>
+
+Company Name: <input type="text" id="company_name" value="Company3 Inc.">
+Company Address: <input type="text" id="company_address" value="Highway 40">
+<p></p>
+
+<button onclick="writeToDatabase()">Write to Database</button> 
+
+<p id="database_server_write_result"></p>
+
+<hr>
+
+<h2>Linking to database server through Web Server:</h2>
+<h2>Database Read</h2>
+
+Record ID: <input type="text" id="record_id" value="75">
+<p></p>
+
+<button onclick="readFromDatabase()">Read From Database</button> 
+
+<p id="database_server_read_result"></p>
+
 <script>
-function doFunction() {
-  // input
-  var name = document.getElementById('text_input').value;
-  var num = document.getElementById('number_input').value;
-  // output
-  document.getElementById("text_result").innerHTML = "Hello " + name;
-  document.getElementById("number_result").innerHTML = num + num;
-}
-  
-function writefunction(){
-}
-function readfunction(){
-}
+  function doFunction() {
+    // input
+    var name = document.getElementById('text_input').value;
+    var num = document.getElementById('number_input').value;
+    // output
+    document.getElementById("text_result").innerHTML = "Hello " + name;
+    document.getElementById("number_result").innerHTML = num + num;
+  }
+    
+  function externalFunction(){
+    testButton()
+  }
+  function accessWebserver(){
+    queryWebserver()
+  }
+  function writeToDatabase(){
+    databaseWrite()
+  }
+  function readFromDatabase(){
+    databaseRead()
+  }
   
 </script>
- 
+
 </body>
 </html>
