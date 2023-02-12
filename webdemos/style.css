@@ -6,4 +6,10 @@ body {
 h1 {
     color: white;
     text-align: center;
+    font-size: 25px;
+}
+h2 {
+    color:firebrick;
+    text-align: center;
+    font-size: 15px;
 }
